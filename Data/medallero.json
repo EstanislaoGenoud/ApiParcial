@@ -22,5 +22,11 @@
     "oro": 16,
     "plata": 26,
     "bronce": 22
+  },
+  {
+    "pais": "Argentina",
+    "oro": 1,
+    "plata": 1,
+    "bronce": 1
   }
 ]

@@ -1,0 +1,22 @@
+{
+  "name": "apiparcial",
+  "version": "1.0.0",
+  "description": "Api para 2do Parcial de la materia Programacion de la carrera Desarrollo de Software 2do año",
+  "license": "ISC",
+  "author": "Estanislao Genoud",
+  "type": "module",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js",
+    "dev": "nodemon Server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "pais": "USA",
+    "oro": 40,
+    "plata": 44,
+    "bronce": 42
+  },
+  {
+    "pais": "China",
+    "oro": 40,
+    "plata": 27,
+    "bronce": 24
+  },
+  {
+    "pais": "Gran Bretaña",
+    "oro": 14,
+    "plata": 22,
+    "bronce": 29
+  }
+]

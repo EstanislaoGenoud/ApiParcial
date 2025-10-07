@@ -16,5 +16,11 @@
     "oro": 14,
     "plata": 22,
     "bronce": 29
+  },
+  {
+    "pais": "Francia",
+    "oro": 16,
+    "plata": 26,
+    "bronce": 22
   }
 ]

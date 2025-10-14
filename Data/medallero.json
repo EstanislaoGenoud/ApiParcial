@@ -1,32 +1,12 @@
 [
   {
+    "id": 1,
     "pais": "USA",
     "oro": 40,
     "plata": 44,
-    "bronce": 42
-  },
-  {
-    "pais": "China",
-    "oro": 40,
-    "plata": 27,
-    "bronce": 24
-  },
-  {
-    "pais": "Gran Bretaña",
-    "oro": 14,
-    "plata": 22,
-    "bronce": 29
-  },
-  {
-    "pais": "Francia",
-    "oro": 16,
-    "plata": 26,
-    "bronce": 22
-  },
-  {
-    "pais": "Argentina",
-    "oro": 1,
-    "plata": 1,
-    "bronce": 1
+    "bronce": 42,
+    "total": 132,
+    "region": "America",
+    "usoHorario": "UTC-5"
   }
 ]

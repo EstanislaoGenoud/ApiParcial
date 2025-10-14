@@ -1,14 +1,23 @@
-import express from 'express';
-import { fetchPaises, fetchPaisByName, createPais, modifyPais, removePais } from '../Controllers/paisesController.js';
+import express from "express";
+import {
+  fetchPaises,
+  fetchPaisByName,
+  createPais,
+  modifyPais,
+  removePais,
+  fetchPaisById,
+} from "../Controllers/paisesController.js";
 const router = express.Router();
 // Ruta para obtener todos los países
-router.get('/', fetchPaises);
+router.get("/", fetchPaises);
 // Ruta para obtener un país por su nombre
-router.get('/:name', fetchPaisByName);
+router.get("/:name", fetchPaisByName);
+// Ruta para obtener un país por su ID
+router.get("/id/:id", fetchPaisById);
 // Ruta para agregar un nuevo país
-router.post('/', createPais);
+router.post("/", createPais);
 // Ruta para actualizar un país por su ID
-router.put('/:name', modifyPais);
+router.put("/:name", modifyPais);
 // Ruta para eliminar un país por su ID
-router.delete('/:name', removePais);
+router.delete("/id/:id", removePais);
 export default router;

@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { validatePaisData } from "../Middlewares/validationMiddleware.js";
 
 // Configurar ruta absoluta al JSON
 const __filename = fileURLToPath(import.meta.url);
@@ -40,26 +39,23 @@ export function addPais(newPais) {
   // Asignar un ID único
   const maxId = paises.reduce((max, p) => (p.id > max ? p.id : max), 0);
   newPais.id = maxId + 1;
-  validatePaisData(newPais);
+  //validatePaisData(newPais);
   paises.push(newPais);
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
   return newPais;
 }
 
 // Actualizar un país existente
-export function updatePais(name, updatedData) {
+export function updatePais(id, updatedData) {
   const paises = getPaises();
-
-  // Buscamos el índice seguro
-  const index = paises.findIndex(
-    (pais) => pais?.pais?.toLowerCase() === name.toLowerCase()
-  );
-
+  const index = paises.findIndex((p) => p.id === Number(id));
   if (index === -1) return null;
-  paises[index] = { ...paises[index], ...updatedData };
+
+  const merged = { ...paises[index], ...updatedData };
+  paises[index] = merged;
 
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
-  return paises[index];
+  return merged;
 }
 // Eliminar un país por id
 
@@ -70,4 +66,24 @@ export function deletePais(id) {
   paises.splice(index, 1);
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
   return true;
+}
+export function getUsoHorarioConMasMedallas() {
+  const paises = getPaises();
+  const map = {};
+
+  for (const p of paises) {
+    const zh = p.usoHorario;
+    if (!zh) continue;
+    map[zh] = (map[zh] || 0) + (p.total || 0);
+  }
+
+  let maxZh = null,
+    maxTot = -1;
+  for (const [zh, tot] of Object.entries(map)) {
+    if (tot > maxTot) {
+      maxTot = tot;
+      maxZh = zh;
+    }
+  }
+  return maxZh ? { usoHorario: maxZh, medallas: maxTot } : null;
 }

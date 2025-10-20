@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import paisesRoutes from "./Routes/paisesRoutes.js";
-
+import { loggerMiddleware } from "./Middlewares/loggerMiddleware.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static("public"));
 
+app.use(loggerMiddleware);
 app.get("/", (req, res) => {
   res.json({
     message:

@@ -3,6 +3,7 @@ import {
   getPaisesByName,
   getUsoHorarioConMasMedallas,
   addPais,
+  getPaisesByRegion,
   updatePais,
   deletePais,
   getPaisById,
@@ -50,6 +51,18 @@ export function createPais(req, res) {
     res.status(400).json({ error: err.message });
   }
 }
+// Controlador para filtrar por region
+export function fetchPaisesByRegion(req,res){
+  const {region}= req.query;
+  if(!region){
+    return res.status(400).json({ message: "Se requiere el nombre de la region"});
+  }
+  const resultado=getPaisesByRegion(region);
+  if(!resultado.length){
+    return res.status(404).json({ message: "Ningun pais encontrado para esa region" });
+  }
+  res.json(resultado);
+}
 // Controlador para actualizar un país por su ID
 export function modifyPais(req, res) {
   const id = Number(req.params.id);
@@ -69,7 +82,6 @@ export const removePais = (req, res) => {
 };
 // Controlador para obtener el uso horario con mayor medallas obtenidas
 export function fetchZhTop(req, res) {
-  console.log("entra");
   const top = getUsoHorarioConMasMedallas();
   if (!top) return res.status(404).json({ error: "Sin datos" });
   res.json(top);

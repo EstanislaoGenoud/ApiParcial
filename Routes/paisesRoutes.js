@@ -2,6 +2,7 @@ import express from "express";
 import {
   fetchPaises,
   fetchPaisByName,
+  fetchPaisesByRegion,
   createPais,
   modifyPais,
   removePais,
@@ -12,8 +13,8 @@ import { validatePaisData } from "../Middlewares/validationMiddleware.js";
 const router = express.Router();
 // Ruta para obtener todos los países
 router.get("/", fetchPaises);
-// Ruta para obtener un país por su nombre
-router.get("/:name", fetchPaisByName);
+// Ruta para filtrar por region
+router.get("/region", fetchPaisesByRegion);
 // Ruta para obtener un país por su ID
 router.get("/id/:id", fetchPaisById);
 router.get(
@@ -24,6 +25,11 @@ router.get(
   },
   fetchZhTop
 );
+// Ruta para obtener un país por su nombre
+router.get("/:name", fetchPaisByName);
+
+
+
 // Ruta para agregar un nuevo país
 router.post("/", validatePaisData, createPais);
 // Ruta para actualizar un país por su ID

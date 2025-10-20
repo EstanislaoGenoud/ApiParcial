@@ -44,6 +44,14 @@ export function addPais(newPais) {
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
   return newPais;
 }
+// Filtro por region
+export function getPaisesByRegion(region){
+  if(!region) return[];
+  const paises= getPaises();
+  return paises.filter(
+    (p)=> p?.region && p.region.toLowerCase()=== region.toLowerCase()
+  );
+}
 
 // Actualizar un país existente
 export function updatePais(id, updatedData) {

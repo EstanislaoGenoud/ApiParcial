@@ -33,7 +33,7 @@ Respuesta OK (200)
 ```
 
 1\*
-![Texto que aparece si la imagen no carga](../Assets/image1.png)
+![Texto que aparece si la imagen no carga](./Assets/image1.png)
 
 ### 2. Obtener por ID
 
@@ -45,7 +45,7 @@ Respuesta OK (200) → objeto país
 ```
 
 2\*
-![Texto que aparece si la imagen no carga](../Assets/image2.png)
+![Texto que aparece si la imagen no carga](./Assets/image2.png)
 
 ### 3. Obtener por nombre
 
@@ -58,7 +58,7 @@ Respuesta OK (200) → objeto país
 ```
 
 3\*
-![Texto que aparece si la imagen no carga](../Assets/image3.png)
+![Texto que aparece si la imagen no carga](./Assets/image3.png)
 
 ### 4. Filtro por region
 
@@ -72,7 +72,7 @@ Respuesta OK (200)
 ```
 
 4\*
-![Texto que aparece si la imagen no carga](../Assets/image4.png)
+![Texto que aparece si la imagen no carga](./Assets/image4.png)
 
 ### 5. Uso horario con mas medallas obtenidas
 
@@ -82,7 +82,7 @@ Respuesta OK (200)
 404 si no hay datos
 ```
 
-![Texto que aparece si la imagen no carga](../Assets/image5.png)
+![Texto que aparece si la imagen no carga](./Assets/image5.png)
 
 ### 6. Crear Pais
 
@@ -93,8 +93,8 @@ Content-Type: application/json
 400 si falta pais o los tipos son incorrectos
 ```
 
-![Texto que aparece si la imagen no carga](../Assets/image6.png)
-![Texto que aparece si la imagen no carga](../Assets/image6.1.png)
+![Texto que aparece si la imagen no carga](./Assets/image6.png)
+![Texto que aparece si la imagen no carga](./Assets/image6.1.png)
 
 ### 7. Actualizar Pais
 
@@ -115,7 +115,7 @@ Respuesta: OK (200)
 404 si el ID no existe
 ```
 
-![Texto que aparece si la imagen no carga](../Assets/image8.png)
+![Texto que aparece si la imagen no carga](./Assets/image8.png)
 
 ---
 

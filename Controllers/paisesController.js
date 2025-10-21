@@ -36,9 +36,6 @@ export function fetchPaisById(req, res) {
   }
   const pais = getPaisById(id);
   if (!pais) return res.status(404).json({ message: "País no encontrado." });
-  if (id != Number) {
-    return res.status(404).json({ message: "Solo admite numericos" });
-  }
   res.json(pais);
 }
 

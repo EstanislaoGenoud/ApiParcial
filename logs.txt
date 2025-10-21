@@ -33,3 +33,9 @@
 [2025-10-21T01:21:06.082Z] PUT /api/paises/3
 [2025-10-21T01:24:15.082Z] GET /api/paises/id/usa
 [2025-10-21T01:24:37.015Z] GET /api/paises/id/usa
+[2025-10-21T01:27:54.609Z] GET /api/paises/id/2
+[2025-10-21T01:28:50.889Z] GET /api/paises/id/2
+[2025-10-21T01:29:00.311Z] GET /api/paises/id/2
+[2025-10-21T01:29:10.538Z] GET /api/paises/id/2
+[2025-10-21T01:30:12.079Z] GET /api/paises/id/2
+[2025-10-21T01:30:56.637Z] GET /api/paises/id/2

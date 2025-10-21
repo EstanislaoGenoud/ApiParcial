@@ -35,6 +35,9 @@ coverage/
 *.swp
 *.swo
 
+# .md
+correcion.md
+
 # Certificados locales
 certificates/
 *.pem

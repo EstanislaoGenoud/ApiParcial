@@ -7,7 +7,7 @@
     "bronce": 42,
     "total": 132,
     "region": "America",
-    "usoHorario": "UTC-5"
+    "husoHorario": "UTC-5"
   },
   {
     "pais": "Argentina",
@@ -15,8 +15,18 @@
     "plata": 1,
     "bronce": 1,
     "total": 3,
-    "usoHorario": "GMT-3",
+    "husoHorario": "GMT-3",
     "region": "America",
     "id": 2
+  },
+  {
+    "pais": "España",
+    "oro": 20,
+    "plata": 15,
+    "bronce": 10,
+    "total": 45,
+    "usoHorario": "UTC+1",
+    "region": "Europa",
+    "id": 3
   }
 ]

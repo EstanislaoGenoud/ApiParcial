@@ -45,21 +45,22 @@ export function addPais(newPais) {
   return newPais;
 }
 // Filtro por region
-export function getPaisesByRegion(region){
-  if(!region) return[];
-  const paises= getPaises();
+export function getPaisesByRegion(region) {
+  if (!region) return [];
+  const paises = getPaises();
   return paises.filter(
-    (p)=> p?.region && p.region.toLowerCase()=== region.toLowerCase()
+    (p) => p?.region && p.region.toLowerCase() === region.toLowerCase()
   );
 }
 
 // Actualizar un país existente
-export function updatePais(id, updatedData) {
+export function updatePais(id, data) {
   const paises = getPaises();
   const index = paises.findIndex((p) => p.id === Number(id));
+
   if (index === -1) return null;
 
-  const merged = { ...paises[index], ...updatedData };
+  const merged = { ...paises[index], ...data };
   paises[index] = merged;
 
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
@@ -75,12 +76,12 @@ export function deletePais(id) {
   fs.writeFileSync(dataPath, JSON.stringify(paises, null, 2));
   return true;
 }
-export function getUsoHorarioConMasMedallas() {
+export function getHusoHorarioConMasMedallas() {
   const paises = getPaises();
   const map = {};
 
   for (const p of paises) {
-    const zh = p.usoHorario;
+    const zh = p.husoHorario;
     if (!zh) continue;
     map[zh] = (map[zh] || 0) + (p.total || 0);
   }
@@ -93,5 +94,5 @@ export function getUsoHorarioConMasMedallas() {
       maxZh = zh;
     }
   }
-  return maxZh ? { usoHorario: maxZh, medallas: maxTot } : null;
+  return maxZh ? { husoHorario: maxZh, medallas: maxTot } : null;
 }

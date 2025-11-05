@@ -3,6 +3,7 @@ import {
   fetchPaises,
   fetchPaisByName,
   fetchPaisesByRegion,
+  fetchPaisesByMedallas,
   createPais,
   modifyPais,
   removePais,
@@ -18,6 +19,8 @@ const router = express.Router();
 router.get("/", fetchPaises);
 // Ruta para filtrar por region
 router.get("/region", fetchPaisesByRegion);
+// Ruta para filtrar por medallas: http://localhost:3000/api/paises/medallas?mayor=10
+router.get("/medallas", fetchPaisesByMedallas);
 // Ruta para obtener un país por su ID
 router.get("/id/:id", fetchPaisById);
 router.get(

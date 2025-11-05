@@ -8,6 +8,7 @@ import {
   deletePais,
   getPaisById,
 } from "../Models/paisesModel.js";
+import { filterByClaveValor } from "../Services/MayorMenor.services.js";
 // Controlador para obtener todos los países
 export const fetchPaises = (req, res) => {
   const paises = getPaises();
@@ -66,6 +67,11 @@ export function fetchPaisesByRegion(req, res) {
       .json({ message: "Ningun pais encontrado para esa region" });
   }
   res.json(resultado);
+}
+
+// Controlador del filtrado por clave/valor a los servicios
+export function fetchPaisesByMedallas(req, res) {
+  return filterByClaveValor(req, res);
 }
 // Controlador para actualizar un país por su ID
 export function modifyPais(req, res) {
